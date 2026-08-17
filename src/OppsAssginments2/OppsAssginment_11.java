@@ -112,3 +112,23 @@ public static void main(String[] args) {
 }
 
 }
+/*
+
+
+abstraction as an agreement/contract between two layers.
+Zomato-style app, suppose the service layer wants to get restaurant or order data from the database layer,
+The service layer should not need to know how the database is being accessed. It only needs to know what operations are available.
+Service Layer
+     |
+     |  "I need restaurant data"
+     ↓
+Abstraction / Contract
+     |
+     ↓
+Database Layer
+     |
+     ↓
+MongoDB / MySQL / etc.
+"If you are a database implementation, you MUST provide these methods."
+
+*/
