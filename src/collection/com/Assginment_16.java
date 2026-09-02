@@ -3,7 +3,10 @@ package collection.com;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 class Product{
 	String name;
 	int price;
@@ -11,9 +14,7 @@ class Product{
 		this.name = name;
 		this.price = price;
 	}
-	void totalCartValue(){
-		
-	}
+	
 }
 class Song {
     String title;
@@ -81,6 +82,7 @@ public static void main(String[] args) {
 		 System.out.println();
    	}
    	System.out.println(totalPrice);
+   	
    	
    	
     HashMap<String, Integer> followers = new HashMap<>();
