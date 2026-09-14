@@ -32,5 +32,17 @@ public static void main(String[] args) {
     Ig.put("alia", 80);
 
     printMostFollowerUser(Ig);
+    
+    ////////////Task-4
+	/*    
+	
+	    A HashMap in Java is similar to a database table because both store data using a unique identifier to quickly find related information.
+	    | Order ID | Order Details            |
+| -------- | ------------------------ |
+| 101      | Pizza, ₹250, Delivered   |
+| 102      | Burger, ₹180, Delivered  |
+| 103      | Biryani, ₹220, Cancelled |
+
+	    */
 }
 }
