@@ -14,7 +14,7 @@ public static void main(String[] args) {
 		PreparedStatement ps = con.prepareStatement(query);
 
 		int playlistId = 1;
-		ps.setInt(1, playlistId);
+		ps.setInt(1, playlistId); 
 
 ResultSet rs = ps.executeQuery();
 while (rs.next()) {
