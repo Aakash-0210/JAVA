@@ -19,7 +19,7 @@ public class InsertMovie {
 
             // Values to insert
             statement.setInt(1, 101);
-//            statement.setString(2, "Batman");
+            statement.setString(2, "Batman");
             statement.setString(3, "Action");
 
             int rowsInserted = statement.executeUpdate();
