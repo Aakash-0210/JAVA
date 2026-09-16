@@ -20,7 +20,39 @@
         <welcome-file>default.xhtml</welcome-file>
     </welcome-file-list>
 
+<servlet>
+<servlet-name>movieGenra</servlet-name>
+<servlet-class>com.servlet.ServletConfigDemo</servlet-class>
+ 
+ <init-param>
+ <param-name>defaultGenre</param-name>
+ <param-value>Action</param-value>
+ </init-param>
+</servlet>
 
+<servlet-mapping>
+<servlet-name>movieGenra</servlet-name>
+<url-pattern>/movieGenra</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+<servlet-name>appTheme</servlet-name>
+<servlet-class>com.servlet.ThemeServlet</servlet-class>
+</servlet>
+ <context-param>
+<param-name>defaultTheme</param-name>
+<param-value>Dark</param-value>
+
+</context-param> 
+<servlet-mapping>
+<servlet-name>appTheme</servlet-name>
+<url-pattern>/theme</url-pattern>
+</servlet-mapping>
+
+
+
+<!--  -->
 <servlet>
     <servlet-name>ReviewServlet</servlet-name>
     <servlet-class>com.servlet.ReviewServlet</servlet-class>
