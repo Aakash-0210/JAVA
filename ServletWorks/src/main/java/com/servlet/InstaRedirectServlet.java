@@ -27,7 +27,7 @@ public class InstaRedirectServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("that the redirect is happening");
+		System.out.println("the redirect is happening");
 		   response.setStatus(302);
 		
 		response.sendRedirect("TrendingServlet");
