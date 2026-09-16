@@ -33,6 +33,7 @@ public void init(ServletConfig config) throws ServletException {
 }
 
 	
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		
