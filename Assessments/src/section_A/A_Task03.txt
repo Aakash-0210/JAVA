@@ -1,0 +1,49 @@
+SCENARIO:
+
+You are developing the admin login and menu search features for a food delivery
+back-office panel. The login query is built by concatenating the username and
+password directly into a SQL string. The menu search constructs its query the same way
+using the keyword typed by the admin.
+
+
+Question:
+
+A security audit flags both features as vulnerable to SQL injection. Using a concrete
+example from the login query, explain exactly how an attacker could exploit string concatenation
+to bypass authentication. Then describe how switching to PreparedStatement closes this
+vulnerability, and explain the underlying difference in how the database engine processes a
+Statement versus a PreparedStatement at query execution time.
+
+Answer:
+
+
+in SQl query concatenating, the query structure is directly build and executed in the mysql databse with the user input, in this process the values is depend on the user,
+and the user can provide specially crafted input "the sql syntax" inside the input that can change the structure and the meaning of the query which can leads to the sql injection, and because of that we avoid writing the query
+with concatenating way. this is one type of attack that can happen when user input is directly concatenated into SQL.
+
+1. SQL query is created 
+2.database receive query 
+3.databse parse the query 
+4. execute the query 
+5. return the result 
+
+for example: "selcet * from users where username = '" +username+"' and password = '" +password+"'" but if user write the or '1'='1' that can concatenate.
+
+
+in prepared statement, 
+1. We define the fixed the query structure.
+2.and then the SQL statement is prepared/compiled with its structure, and the parameter values are handled separately."
+3. We set the actual values in ? using parameters setter, such as setString(), setInt(), etc.
+4. We execute that query.
+5. return the result
+ now user input is treated as data/values, not SQL structure.
+ 
+ PreparedStatement ps = connection.prepareStatement(
+    "SELECT * FROM users WHERE username = ? AND password = ?"
+);
+
+ps.setString(1, username);
+ps.setString(2, password);
+
+ResultSet rs = ps.executeQuery();
+

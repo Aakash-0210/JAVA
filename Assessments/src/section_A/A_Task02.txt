@@ -1,0 +1,41 @@
+
+
+
+SCENARIO:
+
+You are implementing the payment processing module for a food delivery app. The
+system must handle three distinct failure cases: a customer's wallet balance being too
+low, the payment gateway timing out, and a restaurant marking an item as unavailable
+mid-checkout.
+
+
+Question: 
+
+A senior engineer tells you to stop catching the generic Exception class and instead
+design a custom exception hierarchy for this module. Explain what a custom exception hierarchy
+is, why it produces more maintainable and readable code than a flat catch-all approach in this
+scenario, and describe what at least two of your custom exception classes would represent and
+extend.
+
+
+Answer:
+
+First of all an exception means an abnormal situation that might occur during the program execution and to handle this situation,
+we use exceptions so that program can handle and respond gracefully instead of crashing the application.
+
+the custom exception hierarchy means designing our own exception classs to handle different types of failure with specific response
+in the application. These exceptions are organized in a parent-child relationship using inheritance and the extends keyword.
+ 
+ 
+For example, in a payment system, we can have a PaymentException as the parent class 
+and InsufficientBalanceException, PaymentGatewayTimeoutException, and ItemUnavailableException as child exceptions.
+
+and this approach makes the code more readable, maintainable, easy to bug and more specific in an application 
+so that it becomes easier for the user to understand with the failure-specific response. 
+
+And with generic exceptions, if we try to handle every exception in the same exception, 
+it becomes hard for readability, maintainability, and debugging. 
+
+There are two specific exceptions:
+1. Insufficient balance exception: In this exception we can respond to the user when they have insufficient balance with the message "insufficient balance in the account."
+2. Payment gateway timeout exception: In this exeption, we can  respond with a message "the payment timeout, Try again".

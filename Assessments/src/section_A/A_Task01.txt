@@ -1,0 +1,61 @@
+
+
+
+ SCENARIO
+
+You are building an order management system for a food delivery platform. Active
+orders are stored in a HashMap<String, Order> keyed by order ID. A junior developer
+proposes replacing this with an ArrayList<Order> because it 'keeps the code simpler.'
+
+
+Question:
+
+Compare HashMap and ArrayList for this use case by discussing the time complexity
+of the three most frequent operations — lookup by order ID, inserting a new order, and removing
+a completed order. Justify whether the switch is a good idea, and describe one scenario within
+the same platform where ArrayList would actually be the more appropriate choice.
+
+
+Answer: it would be best to use HashMap over ArrayList. 
+
+
+An array list would be best when we want data/elements in the sequence, maintain the sequence of elements and access by index.
+For example: if we want to store the recent order in order, then in this case, we can use an array list.
+Another example is a shopping cart, and then image gallery for a particular product. For example:
+1. Front image
+2. Back image
+3. Features 
+ArrayList time Complexity for: 
+
+inserting: o(1) if the element insert at the end.
+inserting: o(n) if the element insert in the beginning and middle because after adding existing elements have to shifted right.
+
+
+Look up by Order ID:
+Look up by Order ID, the complexity would be o(n) because an ArrayList stores elements by index, not by Order ID,
+To find an order by Id,  we need to find the order, for that we need to traverse the list and compare each order's Id with 
+given order Id until we find the match, in worst case, we may need to check all n orders, so the time complexity is O(n).
+
+
+Removing order:
+For removing also the time complexity would be o(n) ,
+First, we need to traverse the list to find index of order by comparing each order id with 
+given order id to remove the order, and this search takes o(n).
+
+second, removing an element from the middle shifts all the elements to the left. this also takes o(n). 
+ignoring constant overall time complexity would be o(n).
+
+
+
+HashMap time complexity:
+
+Every time `HashMap` uses inserts, removes, or looks up operations, it will use its key to calculate a hash code and 
+the hash code determine the index/bucket where the key-value pair should be stored or searched.
+
+inserting would be o(1)  with key and value pair (orderId, order) and order id is used as a key;
+removing would be o(1)  because it would remove directly with orderId and no need to traverse the entire collection, 
+Looking up would be o(1)  because it would look with it hash code and no need to traverse the entire collection.
+
+
+
+
