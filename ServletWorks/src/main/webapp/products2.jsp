@@ -8,7 +8,23 @@
 </head>
 <body>
 
+
     <h2>Product List</h2>
+    <%
+    String error = (String) request.getAttribute("error");
+
+    if (error != null) {
+%>
+    <p style="color: red; font-weight: bold;">
+        <%= error %>
+    </p>
+<%
+    } else {
+%>
+    <!-- Your existing product table goes here -->
+<%
+    }
+%>
 
     <table border="1" cellpadding="10">
         <tr>
